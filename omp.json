@@ -1,0 +1,110 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "final_space": true,
+    "version": 4,
+    "transient_prompt": {},
+    "maps": {
+        "host_name": {
+            "s1": "Cluster S1",
+            "c1": "Cluster C1"
+        }
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "root",
+                    "style": "plain",
+                    "powerline_symbol": "",
+                    "foreground": "#ffff66",
+                    "template": " "
+                },
+                {
+                    "type": "executiontime",
+                    "style": "plain",
+                    "template": "{{ if lt .Ms 5000 }}<#ffffff>{{ else if lt .Ms 10000 }}<#ffbb00>{{ else if lt .Ms 60000 }}<#ff8c00>{{ else }}<#ff5e00>{{ end }}  {{ .FormattedMs }}",
+                    "options": {
+                        "threshold": 10,
+                        "style": "austin"
+                    }
+                },
+                {
+                    "template": " {{ .UserName }}@{{ .HostName }}",
+                    "foreground": "#3FB950",
+                    "type": "session",
+                    "style": "plain"
+                },
+                {
+                    "template": " in ",
+                    "foreground": "#FFFFFF",
+                    "type": "text",
+                    "style": "plain"
+                },
+                {
+                    "template": "{{ .Path }}",
+                    "foreground": "#39C5CF",
+                    "type": "path",
+                    "style": "plain",
+                    "options": {
+                        "max_depth": 2,
+                        "edge_format": "%s",
+                        "style": "agnoster_short"
+                    }
+                },
+                {
+                    "type": "go",
+                    "style": "plain",
+                    "foreground": "#7FD5EA",
+                    "template": "  {{ .Full }}",
+                    "options": {
+                        "cache_duration": "10m",
+                        "strategy": "folder"
+                    }
+                },
+                {
+                    "type": "node",
+                    "style": "plain",
+                    "foreground": "#6CA35E",
+                    "template": " {{ .Full }}{{ if eq \"bun\" .PackageManagerName }}<#fbf0df>{{ else if eq \"pnpm\" .PackageManagerName }}<#f9ad00>{{ else if eq \"npm\" .PackageManagerName }}<#6CA35E>{{ else }}<#6CA35E>{{ end }} {{ .PackageManagerIcon }} {{ .PackageManagerName }}</>{{ if eq true .Mismatch }}<#ff0000> <u>!!{{ .Expected }}</u></>{{ end }}",
+                    "options": {
+                        "fetch_package_manager": true,
+                        "cache_duration": "10m",
+                        "strategy": "folder"
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "plain",
+                    "foreground": "#f05133",
+                    "foreground_templates": [],
+                    "template": " git:({{ .Ref }}){{ if .Working.Changed }}±{{ add .Working.Unmerged (add .Working.Deleted (add .Working.Added (add .Working.Modified .Working.Untracked))) }}{{ end }}",
+                    "options": {
+                        "fetch_status": true,
+                        "fetch_user": true
+                    }
+                },
+                {
+                    "type": "upgrade",
+                    "style": "plain",
+                    "foreground": "#111111",
+                    "background": "#FFD664",
+                    "options": {
+                        "cache_duration": "168h"
+                    }
+                },
+                {
+                    "template": " λ",
+                    "foreground": "#D29922",
+                    "type": "text",
+                    "style": "plain",
+                    "options": {
+                        "cache_duration": "none"
+                    }
+                }
+            ]
+        }
+    ]
+}
