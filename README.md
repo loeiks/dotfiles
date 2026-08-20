@@ -1,3 +1,3 @@
-# my dotfiles
+# loeiks dotfiles
 
-This repo contains some of my config files.
+my configs, settings, nixfiles, setup docs etc.
