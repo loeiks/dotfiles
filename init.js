@@ -18,6 +18,12 @@ function runScript(relativePath) {
 
 const steps = [
   {
+    label: "Install Nix",
+    hint: "Nix package manager via the official multi-user installer.",
+    default: true,
+    run: () => runScript("scripts/install-nix.sh"),
+  },
+  {
     label: "Install Docker",
     hint: "Docker Engine on Linux, or a Docker Desktop pointer on macOS.",
     default: true,

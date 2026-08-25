@@ -44,13 +44,8 @@ in
     ".config/nvim".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/nvim";
 
-    ".scripts/install-docker.sh" = {
-      source = ../scripts/install-docker.sh;
-      executable = true;
-    };
-
-    ".scripts/init.js".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/init.js";
+    ".scripts".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/scripts";
   };
 
   home.sessionVariables = {
