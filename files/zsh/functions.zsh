@@ -13,7 +13,7 @@ portkill() {
 
 dwnv() {
   local downloads="$HOME/Downloads"
-  [[ $DOTFILES_OS == wsl ]] && downloads="/mnt/c/Users/loeiks/Downloads"
+  [[ $CURRENT_OS == wsl ]] && downloads="/mnt/c/Users/loeiks/Downloads"
 
   yt-dlp \
     --js-runtimes "bun:$(which bun)" \

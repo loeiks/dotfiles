@@ -29,6 +29,12 @@ const steps = [
     default: true,
     run: () => runScript("scripts/install-docker.sh"),
   },
+  {
+    label: "Install bun globals",
+    hint: "Global packages via `bun add -g` from scripts/bun-globals.txt.",
+    default: true,
+    run: () => runScript("scripts/install-bun-globals.sh"),
+  },
 ];
 
 async function main() {
