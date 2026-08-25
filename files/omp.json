@@ -81,15 +81,6 @@
           }
         },
         {
-          "type": "upgrade",
-          "style": "plain",
-          "foreground": "#111111",
-          "background": "#FFD664",
-          "options": {
-            "cache_duration": "24h"
-          }
-        },
-        {
           "template": " λ",
           "foreground": "#D29922",
           "type": "text",

@@ -22,4 +22,4 @@ zle -N bracketed-paste bracketed-paste-magic
 [[ $CURRENT_OS == darwin ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
 # bun global installs
-export PATH="/Users/loeiks/.bun/bin:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
