@@ -17,3 +17,9 @@ I aim to fix few issues with this dotfiles repo via Nix and scripting;
 - remember why I made different decisions and centralize configs/settings etc.
 
 More detailed things are inside `docs/` folder.
+
+---
+
+Start with following;
+
+`cd ~/ && git clone git@github.com:loeiks/dotfiles.git`
