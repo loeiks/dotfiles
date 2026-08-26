@@ -1,0 +1,195 @@
+{
+  // Workbench Settings
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.iconTheme": "symbols",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.colorCustomizations": {
+    "[GitHub Dark Default]": {
+      "tab.activeBorderTop": "#3fb950",
+      "panelTitle.activeBorder": "#3fb950",
+      "activityBar.activeBorder": "#3fb950",
+    },
+  },
+
+  // UI Settings
+  "window.newWindowProfile": "Default",
+  "window.zoomLevel": 0.5,
+  "terminal.integrated.fontSize": 14,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.dropIntoEditor.preferences": [],
+  "editor.minimap.renderCharacters": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.mouseWheelZoom": true,
+  "editor.fontSize": 14,
+  "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000",
+          },
+        },
+      ],
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff",
+          },
+        },
+      ],
+    },
+    "textMateRules": [],
+  },
+
+  // Explorer Settings
+  "explorer.confirmPasteNative": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+
+  // Git Settings
+  "git.enableSmartCommit": false,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+
+  // GitHub Copilot Settings
+  "chat.viewSessions.enabled": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.enable": {
+    "*": false,
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+  },
+  "chat.editing.confirmEditRequestRemoval": false,
+
+  // Language Settings
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "php.stubs": ["pcntl", "wordpress", "*"],
+  "shellformat.effectLanguages": [
+    "shellscript",
+    "dockerfile",
+    "dotenv",
+    "hosts",
+    "jvmoptions",
+    "ignore",
+    "gitignore",
+    "properties",
+    "spring-boot-properties",
+    "azcli",
+    "bats"
+  ],
+  "files.associations": {
+    "*.zsh": "shellscript"
+  },
+
+  // Prettier SQL Settings
+  "Prettier-SQL.keywordCase": "upper",
+  "Prettier-SQL.SQLFlavourOverride": "postgresql",
+  "Prettier-SQL.newlineBeforeSemicolon": true,
+  "Prettier-SQL.expressionWidth": 80,
+
+  // Tailwind Linting
+  "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
+
+  // File (Language) Level Settings
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome",
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome",
+  },
+  "[ahk2]": {
+    "editor.defaultFormatter": "mark-wiemer.vscode-autohotkey-plus-plus",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true,
+    },
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultColorDecorators": "never",
+    "editor.formatOnType": true,
+    "editor.wordBasedSuggestions": "off",
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode",
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify",
+    "editor.defaultColorDecorators": "never",
+    "files.eol": "\n",
+  },
+
+  // JSON Trusted URLs
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://opencode.ai": true,
+    "https://raw.githubusercontent.com": true,
+    "https://ui.shadcn.com": true,
+    "https://biomejs.dev": true,
+  },
+
+  // General
+  "extensions.ignoreRecommendations": true,
+  "remote.autoForwardPortsSource": "hybrid",
+  
+  // Nix Settings
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {
+    "nil": {
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    }
+  },
+
+  // Editor Settings
+  "editor.quickSuggestionsDelay": 100,
+  "editor.unicodeHighlight.allowedLocales": {
+    "tr": true,
+  },
+}
