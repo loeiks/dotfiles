@@ -1,6 +1,10 @@
 font-family = "FiraCode Nerd Font Mono SemBd"
 font-size = 14
-working-directory = "/Users/loeiks/"
+
+working-directory = "~/dev"
 window-inherit-working-directory = true
 shell-integration-features = ssh-terminfo,ssh-env
 
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
