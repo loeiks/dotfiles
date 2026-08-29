@@ -20,20 +20,22 @@ const steps = [
   {
     label: "Install Docker",
     hint: "Docker Engine on Linux, or a Docker Desktop pointer on macOS.",
-    default: true,
     run: () => runScript("scripts/install-docker.sh"),
   },
   {
     label: "Install bun globals",
     hint: "Global packages via `bun add -g` from scripts/bun-globals.txt.",
-    default: true,
     run: () => runScript("scripts/install-bun-globals.sh"),
   },
   {
     label: "Make zsh default shell",
     hint: "If zsh is already installed, make it default.",
-    default: true,
     run: () => runScript("scripts/default-zsh.sh"),
+  },
+  {
+    label: "Generate SSH key",
+    hint: "Ed25519 key for GitHub etc., added to ssh-agent.",
+    run: () => runScript("scripts/setup-ssh.sh"),
   },
 ];
 
