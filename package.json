@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@clack/prompts": "^0.9.1"
+    "@clack/prompts": "^1.7.0"
   },
   "scripts": {
     "switch:loeiks": "home-manager switch --flake .#loeiks",
     "switch:loeiks-m": "home-manager switch --flake .#loeiks-m",
-    "init": "bun --bun run init.js"
+    "manager": "bun --bun run main.js"
   }
 }

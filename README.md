@@ -22,4 +22,10 @@ More detailed things are inside `docs/` folder.
 
 Start with following;
 
-`cd ~/ && git clone git@github.com:loeiks/dotfiles.git`
+1. `cd ~/ && git clone https://github.com/loeiks/dotfiles`
+2. Prepare environment: `./prep.sh`, will intall Nix etc. finally does switch.
+3. Next `bun run manager`. Install bun based tools.
+4. Now switch into zsh for the first time, `exec zsh`. So plugins gets installed. 
+5. Finally set repo's remot via SSH, and ready!
+
+Any config change should be made within this repo via `Nix`.
