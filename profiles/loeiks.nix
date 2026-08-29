@@ -28,7 +28,7 @@ in
     settings = {
       user = {
         name = "loeiks";
-        email = "loeiks@icloud.com";
+        email = "90484193+loeiks@users.noreply.github.com";
       };
       init.defaultBranch = "main";
       pull.rebase = true;

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 KEY_PATH="${HOME}/.ssh/id_ed25519"
-EMAIL="$(git config --get user.email 2>/dev/null || echo "loeiks@icloud.com")"
+EMAIL="$(git config --get user.email 2>/dev/null || echo "90484193+loeiks@users.noreply.github.com")"
 
 if [[ -f "$KEY_PATH" ]]; then
   echo "SSH key already exists at $KEY_PATH, skipping generation."
