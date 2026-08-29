@@ -6,9 +6,9 @@ import { intro, outro, multiselect, isCancel, cancel } from "@clack/prompts";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 
-function runScript(relativePath) {
+function runScript(relativePath, options = []) {
   const script = join(ROOT, relativePath);
-  const result = Bun.spawnSync(["bash", script], {
+  const result = Bun.spawnSync(["bash", script, ...options], {
     stdio: ["inherit", "inherit", "inherit"],
   });
   if (result.exitCode !== 0) {
@@ -17,12 +17,6 @@ function runScript(relativePath) {
 }
 
 const steps = [
-  {
-    label: "Install Nix",
-    hint: "Nix package manager via the official multi-user installer.",
-    default: true,
-    run: () => runScript("scripts/install-nix.sh"),
-  },
   {
     label: "Install Docker",
     hint: "Docker Engine on Linux, or a Docker Desktop pointer on macOS.",
@@ -34,6 +28,12 @@ const steps = [
     hint: "Global packages via `bun add -g` from scripts/bun-globals.txt.",
     default: true,
     run: () => runScript("scripts/install-bun-globals.sh"),
+  },
+  {
+    label: "Make zsh default shell",
+    hint: "If zsh is already installed, make it default.",
+    default: true,
+    run: () => runScript("scripts/default-zsh.sh"),
   },
 ];
 

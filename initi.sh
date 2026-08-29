@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+echo "==> Making Nix ready"
+
 if command -v nix >/dev/null 2>&1; then
     echo "Nix is already installed ($(nix --version)), skipping install."
 else
@@ -33,3 +37,23 @@ if command -v home-manager >/dev/null 2>&1; then
 else
     nix run home-manager/master -- init --switch
 fi
+
+echo "==> Setting hostname"
+
+case "$(uname -s)" in
+  Linux)
+    sudo hostnamectl set-hostname loeiks
+    echo -e "[network]\ngenerateHosts = false" | sudo tee -a /etc/wsl.conf
+    ;;
+  Darwin)
+    sudo scutil --set ComputerName loeiks
+    sudo scutil --set LocalHostName loeiks
+    ;;
+  *)
+    echo "Skipping hostname: unsupported OS $(uname -s)." >&2
+    ;;
+esac
+
+echo "==> Applying dotfiles"
+
+home-manager switch --flake .#loeiks
