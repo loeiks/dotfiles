@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [[ "$(id -u)" -eq 0 ]]; then
-  echo "Error: do not run initi.sh as root or with sudo." >&2
+  echo "Error: do not run prep.sh as root or with sudo." >&2
   echo "Run it as your normal user (sudo prompts come from within)." >&2
   exit 1
 fi
@@ -15,5 +15,6 @@ echo "==> Installing Nix"
 echo "==> Setting hostname"
 "$ROOT/scripts/set-hostname.sh"
 
-echo "==> Applying dotfiles"
-home-manager switch --flake .#loeiks
+echo
+echo "==> Done. Apply your dotfiles by running:"
+echo "    home-manager switch --flake .#loeiks"

@@ -31,5 +31,7 @@ enable_flakes
 if command -v home-manager >/dev/null 2>&1; then
     echo "home-manager is already installed, skipping."
 else
-    nix run home-manager/master -- init --switch
+    # Install the home-manager CLI only. No switch is run here so that the
+    # user can apply the repo's flake explicitly (see prep.sh / README).
+    nix profile install "github:nix-community/home-manager#home-manager"
 fi
