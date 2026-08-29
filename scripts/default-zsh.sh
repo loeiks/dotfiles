@@ -6,7 +6,7 @@ if ! command -v zsh &>/dev/null; then
   exit 0
 fi
 
-ZSH_PATH="$(realpath "$(command -v zsh)")"
+ZSH_PATH="$(command -v zsh)"
 
 if ! grep -qxF "$ZSH_PATH" /etc/shells; then
   echo "Adding $ZSH_PATH to /etc/shells..."
