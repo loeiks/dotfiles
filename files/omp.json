@@ -62,12 +62,18 @@
           "type": "node",
           "style": "plain",
           "foreground": "#6CA35E",
-          "template": " {{ .Full }}{{ if eq \"bun\" .PackageManagerName }}<#fbf0df>{{ else if eq \"pnpm\" .PackageManagerName }}<#f9ad00>{{ else if eq \"npm\" .PackageManagerName }}<#6CA35E>{{ else }}<#6CA35E>{{ end }} {{ .PackageManagerIcon }} {{ .PackageManagerName }}</>{{ if eq true .Mismatch }}<#ff0000> <u>!!{{ .Expected }}</u></>{{ end }}",
+          "template": "  {{ .Full }}{{ if ne \"bun\" .PackageManagerName }}{{ if eq \"pnpm\" .PackageManagerName }}<#f9ad00>{{ else }}<#6CA35E>{{ end }} {{ .PackageManagerIcon }} {{ .PackageManagerName }}</>{{ end }}{{ if eq true .Mismatch }}<#ff0000> <u>!!{{ .Expected }}</u></>{{ end }}",
           "options": {
             "fetch_package_manager": true,
             "cache_duration": "10m",
             "strategy": "folder"
           }
+        },
+        {
+          "type": "bun",
+          "style": "plain",
+          "foreground": "#fbf0df",
+          "template": "  {{ .Full }}"
         },
         {
           "type": "git",
