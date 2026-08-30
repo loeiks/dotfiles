@@ -22,11 +22,14 @@ More detailed things are inside `docs/` folder.
 
 Start with following;
 
-1. `cd ~/ && git clone https://github.com/loeiks/dotfiles && cd ~/dotfiles`
-2. Prepare environment: `./prep.sh`. Installs Nix and sets the hostname (bootstrap only, no switch).
-3. Apply dotfiles: `home-manager switch --flake .#loeiks` (installs packages, zsh, configs, plus `bun`).
-4. Install bun-based tools: `bun run manager`.
-5. Switch into zsh for the first time: `exec zsh` (installs plugins via zinit).
-6. Point the repo at the SSH remote: `git remote set-url origin git@github.com:loeiks/dotfiles.git`
+1. `bash <(curl -fsSL https://raw.githubusercontent.com/loeiks/dotfiles/refs/heads/main/prep.sh)`
+
+   Clones this repo to `~/dotfiles`, installs Nix, sets the hostname (Linux only),
+   applies the Home Manager flake (`.#loeiks`, or `.#loeiks-m` on macOS), makes zsh
+   the default shell, points `origin` at the SSH remote, then drops you into zsh.
+   Needs `git` and `curl` present; safe to re-run.
+2. In the new zsh: `cd ~/dotfiles && bun run manager` — Docker, bun globals, SSH key.
+3. Add the printed SSH public key to GitHub: <https://github.com/settings/ssh/new>
 
 Any config change should be made within this repo via `Nix`.
+Re-apply later with `nix run home-manager -- switch --flake .#loeiks` (`.#loeiks-m` on macOS).

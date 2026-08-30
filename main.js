@@ -30,7 +30,7 @@ const steps = [
   {
     label: "Make zsh default shell",
     hint: "If zsh is already installed, make it default.",
-    run: () => runScript("scripts/default-zsh.sh"),
+    run: () => runScript("scripts/prep/default-zsh.sh"),
   },
   {
     label: "Generate SSH key",

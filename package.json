@@ -6,8 +6,8 @@
     "@clack/prompts": "^1.7.0"
   },
   "scripts": {
-    "switch:loeiks": "home-manager switch --flake .#loeiks",
-    "switch:loeiks-m": "home-manager switch --flake .#loeiks-m",
+    "switch:loeiks": "nix run home-manager -- switch --flake .#loeiks",
+    "switch:loeiks-m": "nix run home-manager -- switch --flake .#loeiks-m",
     "manager": "bun --bun run main.js"
   }
 }
