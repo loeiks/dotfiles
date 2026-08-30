@@ -29,7 +29,16 @@ in
       user = {
         name = "loeiks";
         email = "90484193+loeiks@users.noreply.github.com";
+        signingKey = "~/.ssh/id_ed25519.pub";
       };
+
+      gpg = {
+        format = "ssh";
+        ssh.allowedSignersFile = "~/.config/git/allowed_signers";
+      };
+
+      commit.gpgSign = true;
+      tag.gpgSign = true;
       init.defaultBranch = "main";
       pull.rebase = true;
     };
