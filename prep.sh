@@ -16,6 +16,14 @@ for t in git curl; do
   fi
 done
 
+# Refresh system packages first (Linux only). apt upgrades don't need a shell
+# reload for anything prep does next, so we just continue.
+if [[ "$(uname -s)" == "Linux" ]]; then
+  echo "==> Updating system packages (apt)"
+  sudo apt update
+  sudo apt upgrade -y
+fi
+
 REPO="$HOME/dotfiles"
 
 if [[ ! -d "$REPO/.git" ]]; then
