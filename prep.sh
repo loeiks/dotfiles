@@ -42,6 +42,18 @@ if [[ -e "$NIX_SH" ]]; then
   . "$NIX_SH"
 fi
 
+# On macOS the fresh Nix install usually isn't active until a reboot. Stop here
+# with a clean exit; re-running prep.sh after the reboot picks up from this point.
+if ! command -v nix >/dev/null 2>&1; then
+  echo
+  if [[ "$(uname -s)" == "Darwin" ]]; then
+    echo "==> Nix is installed but not active yet. Reboot, then run prep.sh again."
+  else
+    echo "==> Nix is installed but not on PATH yet. Open a new shell, then run prep.sh again."
+  fi
+  exit 0
+fi
+
 echo "==> Setting hostname"
 bash scripts/set-hostname.sh
 
