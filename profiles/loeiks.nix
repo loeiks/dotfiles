@@ -32,11 +32,7 @@ in
         signingKey = "~/.ssh/id_ed25519.pub";
       };
 
-      gpg = {
-        format = "ssh";
-        ssh.allowedSignersFile = "~/.config/git/allowed_signers";
-      };
-
+      gpg.format = "ssh";
       commit.gpgSign = true;
       tag.gpgSign = true;
       init.defaultBranch = "main";

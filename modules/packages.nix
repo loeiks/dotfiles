@@ -23,5 +23,7 @@ in
     pkgs.ollama
   ] ++ lib.optionals (!isDarwin) [
     pkgs.xclip
+    pkgs.wsl2-ssh-agent
+    pkgs.socat
   ];
 }

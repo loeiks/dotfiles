@@ -16,6 +16,9 @@ in
 
     ".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/nvim";
+
+    ".ssh/id_ed25519.pub".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/general/id_ed25519.pub";
   } // lib.optionalAttrs isDarwin {
     "Library/Application Support/com.mitchellh.ghostty/config.ghostty".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/macos/config.ghostty";
