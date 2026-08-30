@@ -24,3 +24,16 @@ dwnv() {
     -o "$downloads/%(title)s.%(ext)s" \
     "$1"
 }
+
+hmswitch() {
+  local orig_dir
+  orig_dir="$(pwd)"
+
+  cd "$HOME/dotfiles"
+
+  [[ $CURRENT_OS == wsl ]] && bun run switch:loeiks
+  [[ $CURRENT_OS == linux ]] && bun run switch:loeiks
+  [[ $CURRENT_OS == darwin ]] && bun run switch:loeiks-m
+
+  cd "$orig_dir"
+}
