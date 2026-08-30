@@ -5,7 +5,7 @@ set -euo pipefail
 # never has to be installed (installing it collides with the flake's
 # programs.home-manager.enable).
 
-REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 case "$(uname -s)" in
   Darwin) profile="loeiks-m" ;;

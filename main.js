@@ -16,21 +16,12 @@ function runScript(relativePath, options = []) {
   }
 }
 
+// prep.sh handles first-run setup. Keep only things worth running again later.
 const steps = [
-  {
-    label: "Install Docker",
-    hint: "Docker Engine on Linux, or a Docker Desktop pointer on macOS.",
-    run: () => runScript("scripts/install-docker.sh"),
-  },
   {
     label: "Install bun globals",
     hint: "Global packages via `bun add -g` from scripts/bun-globals.txt.",
     run: () => runScript("scripts/install-bun-globals.sh"),
-  },
-  {
-    label: "Make zsh default shell",
-    hint: "If zsh is already installed, make it default.",
-    run: () => runScript("scripts/prep/default-zsh.sh"),
   },
   {
     label: "Generate SSH key",

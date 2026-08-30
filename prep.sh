@@ -25,7 +25,7 @@ fi
 cd "$REPO"
 
 echo "==> Installing Nix"
-bash scripts/prep/install-nix.sh
+bash scripts/install-nix.sh
 
 # Make `nix` usable in this same run (the installer only patches login shells).
 NIX_SH=/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
@@ -35,23 +35,35 @@ if [[ -e "$NIX_SH" ]]; then
 fi
 
 echo "==> Setting hostname"
-bash scripts/prep/set-hostname.sh
+bash scripts/set-hostname.sh
 
 echo "==> Applying Home Manager configuration"
-bash scripts/prep/switch.sh
+bash scripts/switch.sh
 
 # Home Manager just populated ~/.nix-profile; put it on PATH so `zsh` resolves below.
 export PATH="$HOME/.nix-profile/bin:$PATH"
 
 echo "==> Setting zsh as the default shell"
-bash scripts/prep/default-zsh.sh
+bash scripts/default-zsh.sh
+
+echo "==> Installing project dependencies (bun)"
+bun install
+
+echo "==> Installing global bun packages"
+bash scripts/install-bun-globals.sh
+
+echo "==> Installing Docker"
+bash scripts/install-docker.sh
 
 echo "==> Pointing origin at the SSH remote"
-bash scripts/prep/origin-ssh.sh
+bash scripts/origin-ssh.sh
 
 echo
-echo "==> Done."
+echo "==> Done. Generate an SSH key and add it to GitHub when you need push access:"
+echo "    bun run manager   (then https://github.com/settings/ssh/new)"
 if [[ -t 0 ]]; then
+  echo
+  echo "Starting zsh..."
   exec zsh -l
 else
   echo

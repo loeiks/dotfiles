@@ -20,6 +20,7 @@ in
     pkgs.yt-dlp
     pkgs.tree
     pkgs.fzf
+    pkgs.ollama
   ] ++ lib.optionals (!isDarwin) [
     pkgs.xclip
   ];
