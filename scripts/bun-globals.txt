@@ -1,4 +1,6 @@
 # Global bun packages, installed via `bun add -g`.
 # One package per line; lines starting with # are ignored.
+
 opencode-ai
 @anthropic-ai/claude-code
+@fission-ai/openspec@latest
