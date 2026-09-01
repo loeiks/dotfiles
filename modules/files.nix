@@ -42,4 +42,18 @@ in
     ".aerospace.toml".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/macos/.aerospace.toml";
   };
+
+  # ollama automatic start on macOS via launchd (systemd equivalent)
+  launchd.agents.ollama = lib.mkIf isDarwin {
+    enable = true;
+    config = {
+      ProgramArguments = [ (lib.getExe pkgs.ollama) "serve" ];
+      RunAtLoad = true;
+      KeepAlive = {
+        SuccessfulExit = false;
+        Crashed = true;
+      };
+      ProcessType = "Interactive";
+    };
+  };
 }
