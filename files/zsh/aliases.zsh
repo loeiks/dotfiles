@@ -18,6 +18,7 @@ if [[ $CURRENT_OS == darwin ]]; then
   alias ls='ls -G'
   alias see='open'
   alias clip='pbcopy'
+  alias lap='plutil -p ~/Library/LaunchAgents/*.plist'
 fi
 
 # WSL specific
