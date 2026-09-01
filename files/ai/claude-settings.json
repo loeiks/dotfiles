@@ -1,0 +1,16 @@
+{
+  "enabledPlugins": {
+    "lumen@ory": true
+  },
+  "extraKnownMarketplaces": {
+    "ory": {
+      "source": {
+        "source": "github",
+        "repo": "ory/claude-plugins"
+      }
+    }
+  },
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "enableArtifact": false
+}

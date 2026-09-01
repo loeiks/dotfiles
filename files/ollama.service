@@ -1,0 +1,11 @@
+[Unit]
+Description=Ollama Server
+After=network-online.target
+
+[Service]
+ExecStart=/home/loeiks/.nix-profile/bin/ollama serve
+Restart=on-failure
+Environment="PATH=/home/loeiks/.nix-profile/bin:/usr/bin:/bin"
+
+[Install]
+WantedBy=default.target
