@@ -1,4 +1,5 @@
 {
+  "enableArtifact": false,
   "enabledPlugins": {
     "lumen@ory": true
   },
@@ -10,7 +11,11 @@
       }
     }
   },
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "low"
+    }
+  },
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true,
-  "enableArtifact": false
+  "agentPushNotifEnabled": true
 }
