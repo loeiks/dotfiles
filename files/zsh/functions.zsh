@@ -18,11 +18,10 @@ dwnv() {
   yt-dlp \
     --js-runtimes "bun:$(which bun)" \
     --concurrent-fragments 16 \
-    # --cookies "~/www.youtube.com_cookies.txt" \
     -f "bestvideo[height<=1080]+bestaudio" \
     --merge-output-format mp4 \
     -o "$downloads/%(title)s.%(ext)s" \
-    "$1"
+    $1
 }
 
 hmswitch() {
