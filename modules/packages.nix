@@ -21,6 +21,7 @@ in
     pkgs.tree
     pkgs.fzf
     pkgs.ollama
+    pkgs.ookla-speedtest
   ] ++ lib.optionals (!isDarwin) [
     pkgs.xclip
     pkgs.wsl2-ssh-agent
