@@ -2,5 +2,12 @@
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
         "@ory/lumen-opencode"
-    ]
+    ],
+    "mcp": {
+        "shadcn": {
+      "type": "local",
+      "command": ["npx", "shadcn@latest", "mcp"],
+      "enabled": true
+    }
+    }
 }

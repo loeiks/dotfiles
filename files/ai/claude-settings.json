@@ -1,4 +1,5 @@
 {
+  "model": "claude-fable-5-1[1m]",
   "enableArtifact": false,
   "enabledPlugins": {
     "lumen@ory": true
@@ -14,6 +15,12 @@
   "modelSettings": {
     "claude-sonnet-5": {
       "effortLevel": "low"
+    },
+    "claude-opus-5": {
+      "effortLevel": "low"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
     }
   },
   "inputNeededNotifEnabled": true,

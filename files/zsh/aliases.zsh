@@ -5,6 +5,7 @@ alias gg='$BROWSER'
 
 alias rr='source ~/.zshrc'
 alias rrl='exec su -l "$USER"'
+alias tagents='touch AGENTS.md && ln -s ./AGENTS.md ./CLAUDE.md'
 
 # Linux specific
 if [[ $CURRENT_OS == linux ]]; then
