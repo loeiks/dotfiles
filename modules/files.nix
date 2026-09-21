@@ -23,10 +23,6 @@ in
     ".ssh/id_ed25519.pub".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/general/id_ed25519.pub";
 
-    # Claude and OpenCode skills.
-    ".claude/skills".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.claude/skills";
-    ".agents/skills".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.agents/skills";
-
     # OpenCode and Claude settings (plugins, mcps etc.)
     ".config/opencode/opencode.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/ai/opencode.jsonc";
     ".claude/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/ai/claude-settings.json";

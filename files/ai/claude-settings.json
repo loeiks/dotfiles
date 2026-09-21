@@ -1,5 +1,4 @@
 {
-  "model": "claude-fable-5-1[1m]",
   "enableArtifact": false,
   "enabledPlugins": {
     "lumen@ory": true
@@ -20,7 +19,7 @@
       "effortLevel": "low"
     },
     "claude-fable-5-1": {
-      "effortLevel": "medium"
+      "effortLevel": "low"
     }
   },
   "inputNeededNotifEnabled": true,

@@ -5,3 +5,4 @@ opencode-ai
 @anthropic-ai/claude-code
 @fission-ai/openspec@latest
 wrangler
+skills

@@ -15,6 +15,9 @@ in
     CURRENT_OS = currentOS;
   };
 
+  # For manual/non-Nix-tracked installs that drop binaries here
+  home.sessionPath = [ "$HOME/.local/bin" ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;

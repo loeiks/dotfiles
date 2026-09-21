@@ -6,10 +6,12 @@
 
 let
 isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
+t3-code = pkgs.callPackage ./packages/t3-code/stable.nix { };
 in
 
 {
   home.packages = [
+    t3-code
     pkgs.zinit
     pkgs.oh-my-posh
     pkgs.neovim

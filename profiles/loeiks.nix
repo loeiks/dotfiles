@@ -13,6 +13,7 @@ in
     ../modules/files.nix
     ../modules/shell.nix
     ../modules/languages.nix
+    ../modules/skills.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should manage.
