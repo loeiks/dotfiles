@@ -28,3 +28,7 @@ if [[ $CURRENT_OS == wsl ]]; then
   alias see='explorer.exe'
   alias clip='clip.exe'
 fi
+
+# run t3-code in the background
+alias t3s='t3 service install'
+alias t3b='see http://localhost:3773'
