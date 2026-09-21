@@ -11,6 +11,7 @@ repoDir = "${config.home.homeDirectory}/dotfiles";
 skillNames = [
   "handoff"
   "teach"
+  "i-have-adhd"
 ];
 
 # Recursively list files (relative paths) under a directory.
