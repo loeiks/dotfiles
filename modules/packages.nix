@@ -11,7 +11,6 @@ in
 
 {
   home.packages = [
-    t3-code
     pkgs.zinit
     pkgs.oh-my-posh
     pkgs.neovim
@@ -25,6 +24,7 @@ in
     pkgs.ollama
     pkgs.ookla-speedtest
   ] ++ lib.optionals (!isDarwin) [
+    t3-code
     pkgs.xclip
     pkgs.wsl2-ssh-agent
     pkgs.socat
