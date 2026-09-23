@@ -43,7 +43,10 @@ in
 lib.listToAttrs (
   map (rel: {
       name = "${destDir}/${skillName}/${rel}";
-      value.source = config.lib.file.mkOutOfStoreSymlink "${repoDir}/.agents/skills/${skillName}/${rel}";
+      value = {
+        source = config.lib.file.mkOutOfStoreSymlink "*/Users/loeiks/dotfiles/.agents/skills/${skillName}/${rel}";
+        force = true;
+      };
   }) (listFilesRec skillDir "")
 );
 in
