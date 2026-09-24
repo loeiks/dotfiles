@@ -8,6 +8,7 @@
   "scripts": {
     "switch:loeiks": "nix run home-manager -- switch --flake .#loeiks",
     "switch:loeiks-m": "nix run home-manager -- switch --flake .#loeiks-m",
-    "manager": "bun --bun run main.js"
+    "manager": "bun --bun run main.js",
+    "update": "scripts/install-bun-globals.sh"
   }
 }

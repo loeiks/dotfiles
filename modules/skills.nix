@@ -5,53 +5,37 @@
 }:
 
 let
-repoDir = "${config.home.homeDirectory}/dotfiles";
+  repoDir = "${config.home.homeDirectory}/dotfiles";
 
-# Add new skill names here as they're added.
-skillNames = [
-  "handoff"
-  "teach"
-  "i-have-adhd"
-];
+  # Add new skill names here as they're added.
+  skillNames = [
+    "handoff"
+    "teach"
+    "i-have-adhd"
+  ];
 
-# Recursively list files (relative paths) under a directory.
-listFilesRec =
-dir: relPrefix:
-lib.concatLists (
-  lib.mapAttrsToList (
-    name: type:
-    let
-    path = dir + "/${name}";
-    rel = if relPrefix == "" then name else "${relPrefix}/${name}";
-    in
-    if type == "directory" then listFilesRec path rel else [ rel ]
-  ) (builtins.readDir dir)
-);
+  # Agents whose skills should mirror the repo's .agents/skills, per skill.
+  destDirs = [
+    ".claude/skills"
+    ".agents/skills"
+  ];
 
-# Destination dirs (under $HOME) that should mirror .agents/skills, per-file.
-destDirs = [
-  ".claude/skills"
-  ".agents/skills"
-];
-
-# Per-file symlinks avoid polluting the repo with tool-written extras.
-mkSkillLinks =
-destDir: skillName:
-let
-skillDir = ../.agents/skills + "/${skillName}";
-in
-lib.listToAttrs (
-  map (rel: {
-      name = "${destDir}/${skillName}/${rel}";
-      value = {
-        source = config.lib.file.mkOutOfStoreSymlink "*/Users/loeiks/dotfiles/.agents/skills/${skillName}/${rel}";
-        force = true;
-      };
-  }) (listFilesRec skillDir "")
-);
+  # Per-skill out-of-store symlinks. Every skill under each destDir points at
+  # the same repo folder, so there is a single source of truth with no
+  # per-agent copies and no whole-folder takeover.
+  skillLinks = lib.listToAttrs (
+    lib.concatMap (
+      destDir:
+      map (skillName: {
+          name = "${destDir}/${skillName}";
+          value = {
+            source = config.lib.file.mkOutOfStoreSymlink "${repoDir}/.agents/skills/${skillName}";
+            force = true;
+          };
+      }) skillNames
+    ) destDirs
+  );
 in
 {
-  home.file = lib.mkMerge (
-    lib.concatMap (destDir: map (mkSkillLinks destDir) skillNames) destDirs
-  );
+  home.file = skillLinks;
 }
