@@ -6,7 +6,6 @@
 
 let
 isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
-t3-code = pkgs.callPackage ./packages/t3-code/stable.nix { };
 in
 
 {
@@ -24,7 +23,6 @@ in
     pkgs.ollama
     pkgs.ookla-speedtest
   ] ++ lib.optionals (!isDarwin) [
-    t3-code
     pkgs.xclip
     pkgs.wsl2-ssh-agent
     pkgs.socat
