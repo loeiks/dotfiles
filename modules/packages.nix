@@ -26,5 +26,6 @@ in
     pkgs.xclip
     pkgs.wsl2-ssh-agent
     pkgs.socat
+    pkgs.dnsutils
   ];
 }
