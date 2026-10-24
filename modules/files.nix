@@ -26,6 +26,9 @@ in
     # OpenCode and Claude settings (plugins, mcps etc.)
     ".config/opencode/opencode.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/ai/opencode.jsonc";
     ".claude/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/ai/claude-settings.json";
+
+    # bun global package.json (trustedDependencies so postinstall scripts run, e.g. @opencode/cli)
+    ".bun/install/global/package.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/bun/global-package.json";
   } // lib.optionalAttrs (!isDarwin) {
     # ollama automatic start config (systemd is Linux/WSL only)
     ".config/systemd/user/ollama.service".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/files/ollama.service";

@@ -1,0 +1,10 @@
+{
+  "trustedDependencies": ["@opencode/cli"],
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.1.310",
+    "@fission-ai/openspec": "^1.15.0",
+    "@opencode/cli": "^2.1.4",
+    "skills": "^1.7.4",
+    "wrangler": "^4.152.0"
+  }
+}
