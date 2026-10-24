@@ -36,3 +36,22 @@ hmswitch() {
 
   cd "$orig_dir"
 }
+
+portskills() {
+  local target="${1:?Usage: portskills <target>}"
+  local source=".agents/skills"
+  local dest=".$target/skills"
+
+  [[ -d "$source" ]] || {
+    echo "Error: $source directory not found"
+    return 1
+  }
+
+  mkdir -p "$dest" || return 1
+
+  find "$source" -mindepth 1 -maxdepth 1 -print0 |
+    while IFS= read -r -d '' item; do
+      local name="${item##*/}"
+      ln -sfn "$(realpath "$item")" "$dest/$name" || exit 1
+    done
+}
