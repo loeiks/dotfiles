@@ -27,6 +27,7 @@
       builtins.elem (nixpkgs.lib.getName pkg) [
         "claude-code"
         "ookla-speedtest"
+        "muse"
       ];
     };
     modules = [ ./profiles/loeiks.nix ];

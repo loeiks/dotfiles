@@ -22,6 +22,7 @@ in
     pkgs.fzf
     pkgs.ollama
     pkgs.ookla-speedtest
+    (pkgs.callPackage ../pkgs/muse.nix { })
   ] ++ lib.optionals (!isDarwin) [
     pkgs.xclip
     pkgs.wsl2-ssh-agent

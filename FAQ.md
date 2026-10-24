@@ -7,6 +7,15 @@ A: Both shares a json file but works differently, OpenCode directly works over a
 
 ---
 
+## Meta Muse
+
+Q: **How is Muse Code installed, and how do I update it?**
+A: `pkgs/muse.nix` pins Meta's public, checksummed release artifact and installs the static `muse` binary through `home.packages`, so Linux and macOS get the same version from one `nix switch`. The official `curl -fsSL https://dev.meta.ai/install.sh | sh` launcher is not used — it writes a self-updating binary outside Nix. After signing in once with `muse login` (credentials are stored by Muse itself, not in this repo), run `bun run update:muse` to bump the version and hashes from Meta's channel manifest, then commit and switch. Expect the first build to download roughly 400 MB per platform.
+
+> Written by: AI
+
+---
+
 ## Commit Signing
 
 Q: **How does commit signing work here?**
