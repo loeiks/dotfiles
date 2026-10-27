@@ -29,3 +29,11 @@ zle -N bracketed-paste bracketed-paste-magic
 
 # bun global installs
 export PATH="$HOME/.bun/bin:$PATH"
+
+# Nix
+if [[ $CURRENT_OS == darwin ]]; then
+  if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+  fi
+fi
+# End Nix
