@@ -6,10 +6,10 @@
     "workerd"
   ],
   "dependencies": {
-    "@anthropic-ai/claude-code": "^2.1.317",
-    "@fission-ai/openspec": "^1.16.0",
-    "@opencode/cli": "^2.2.5",
+    "@anthropic-ai/claude-code": "^2.1.319",
+    "@fission-ai/openspec": "^1.16.1",
+    "@opencode/cli": "^2.2.6",
     "skills": "^1.7.6",
-    "wrangler": "^4.156.2"
+    "wrangler": "^4.158.0"
   }
 }
