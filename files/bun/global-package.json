@@ -1,0 +1,15 @@
+{
+  "trustedDependencies": [
+    "@anthropic-ai/claude-code",
+    "@opencode/cli",
+    "esbuild",
+    "workerd"
+  ],
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.1.325",
+    "@fission-ai/openspec": "^2.0.0",
+    "@opencode/cli": "^2.3.0",
+    "skills": "^1.8.1",
+    "wrangler": "^4.162.0"
+  }
+}
